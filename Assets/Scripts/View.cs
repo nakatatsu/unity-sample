@@ -4,77 +4,59 @@ using UnityEngine.UI;
 
 public class View : MonoBehaviour
 {
-    private string Input()
+    private InputField InputForm;
+    private Text OutputText;
+    private Logic logic;
+
+    private void Start()
     {
-        var input = GameObject.Find("InputForm").GetComponent<InputField>().text;
-        return input;
+        logic = new Logic();
+        InputForm = GameObject.Find("InputForm").GetComponent<InputField>();
+        OutputText = GameObject.Find("OutputText").GetComponent<Text>();
+        logic.Calculated += new Logic.NumberChangedEventHandler((int sender) => OutputText.text = "処理結果 " + sender.ToString());
     }
 
-    private void Output(string message)
+    private bool Check(string input)
     {
-        GameObject.Find("OutputText").GetComponent<Text>().text = message;
-    }
+        bool valid = true;
 
+        int tmp;
+        if (!Int32.TryParse(input, out tmp))
+        {
+            OutputText.text = "整数のみ入力可";
+            valid = false;
+        }
+
+        return valid;
+    }
 
     public void OnClickPow()
     {
-        // in
-        var input = Input();
-
         // check
-        var logic = new Logic();
-        if (! logic.Check(input))
-        {
-            Output("整数のみ入力可");
+        if (!Check(InputForm.text))
             return;
-        }
 
         // logic
-        var output = logic.Pow(Int32.Parse(input));
-
-        // out
-        Output("処理結果 " + output.ToString());
+        logic.Pow(Int32.Parse(InputForm.text));
     }
 
     public void OnClickIncrement()
     {
-        // in
-        var input = Input();
-
         // check
-        var logic = new Logic();
-        if (!logic.Check(input))
-        {
-            Output("整数のみ入力可");
+        if (!Check(InputForm.text))
             return;
-        }
 
         // logic
-        var output = logic.Increment(Int32.Parse(input));
-
-        // out
-        Output("処理結果 " + output.ToString());
+        logic.Increment(Int32.Parse(InputForm.text));
     }
 
     public void OnClickDecrement()
     {
-        // in
-        var input = Input();
-
         // check
-        var logic = new Logic();
-        if (!logic.Check(input))
-        {
-            Output("整数のみ入力可");
+        if (!Check(InputForm.text))
             return;
-        }
 
         // logic
-        var output = logic.Decrement(Int32.Parse(input));
-
-        // out
-        Output("処理結果 " + output.ToString());
+        logic.Decrement(Int32.Parse(InputForm.text));
     }
-
-
 }

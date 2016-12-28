@@ -3,32 +3,28 @@ using System.IO;
 
 public class Logic
 {
-    public bool Check(string input)
-    {
-        int number;
-        bool canParse = Int32.TryParse(input, out number);
-        return canParse;
-    }
+    public delegate void NumberChangedEventHandler(int sender);
+    public event NumberChangedEventHandler Calculated;
 
-    public double Pow(int number)
+    public void Pow(int number)
     {
-        var result = Math.Pow(number, 2);
+        int result = (int) Math.Pow(number, 2);
         Save(Config.PersistentDataPath + "/pow.txt", result.ToString());
-        return result;
+        Calculated(result);
     }
 
-    public int Increment(int number)
+    public void Increment(int number)
     {
-        var result = number + 1;
+        int result = number + 1;
         Save(Config.PersistentDataPath + "/increment.txt", result.ToString());
-        return result;
+        Calculated(result);
     }
 
-    public int Decrement(int number)
+    public void Decrement(int number)
     {
-        var result = number - 1;
+        int result = number - 1;
         Save(Config.PersistentDataPath + "/decrement.txt", result.ToString());
-        return result;
+        Calculated(result);
     }
 
     private void Save(string filePath, string contents)
