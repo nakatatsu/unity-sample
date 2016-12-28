@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using UnityEngine;
 
 public class Logic
 {
@@ -14,21 +13,21 @@ public class Logic
     public double Pow(int number)
     {
         var result = Math.Pow(number, 2);
-        Save(Application.persistentDataPath + "/pow.txt", result.ToString());
+        Save(Config.PersistentDataPath + "/pow.txt", result.ToString());
         return result;
     }
 
     public int Increment(int number)
     {
         var result = number + 1;
-        Save(Application.persistentDataPath + "/increment.txt", result.ToString());
+        Save(Config.PersistentDataPath + "/increment.txt", result.ToString());
         return result;
     }
 
     public int Decrement(int number)
     {
         var result = number - 1;
-        Save(Application.persistentDataPath + "/decrement.txt", result.ToString());
+        Save(Config.PersistentDataPath + "/decrement.txt", result.ToString());
         return result;
     }
 
