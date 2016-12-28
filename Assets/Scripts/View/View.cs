@@ -6,14 +6,14 @@ public class View : MonoBehaviour
 {
     private InputField InputForm;
     private Text OutputText;
-    private Logic logic;
+    private NumberMediator NumberMediator;
 
     private void Start()
     {
-        logic = new Logic();
+        NumberMediator = new NumberMediator();
         InputForm = GameObject.Find("InputForm").GetComponent<InputField>();
         OutputText = GameObject.Find("OutputText").GetComponent<Text>();
-        logic.Calculated += new Logic.NumberChangedEventHandler((int sender) => OutputText.text = "処理結果 " + sender.ToString());
+        NumberMediator.Calculated += new NumberMediator.NumberChangedEventHandler((int sender) => OutputText.text = "処理結果 " + sender.ToString());
     }
 
     private bool Check(string input)
@@ -36,8 +36,8 @@ public class View : MonoBehaviour
         if (!Check(InputForm.text))
             return;
 
-        // logic
-        logic.Pow(Int32.Parse(InputForm.text));
+        // NumberMediator
+        NumberMediator.Pow(Int32.Parse(InputForm.text));
     }
 
     public void OnClickIncrement()
@@ -46,8 +46,8 @@ public class View : MonoBehaviour
         if (!Check(InputForm.text))
             return;
 
-        // logic
-        logic.Increment(Int32.Parse(InputForm.text));
+        // NumberMediator
+        NumberMediator.Increment(Int32.Parse(InputForm.text));
     }
 
     public void OnClickDecrement()
@@ -56,7 +56,7 @@ public class View : MonoBehaviour
         if (!Check(InputForm.text))
             return;
 
-        // logic
-        logic.Decrement(Int32.Parse(InputForm.text));
+        // NumberMediator
+        NumberMediator.Decrement(Int32.Parse(InputForm.text));
     }
 }
