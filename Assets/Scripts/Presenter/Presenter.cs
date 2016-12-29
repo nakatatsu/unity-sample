@@ -2,8 +2,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
+using UniRx.Triggers;
 
-public class ViewModel : MonoBehaviour
+public class Presenter : MonoBehaviour
 {
     [SerializeField]
     private InputField InputForm;
@@ -24,23 +25,21 @@ public class ViewModel : MonoBehaviour
 
     private void Start()
     {
-        // NumberMediatorの監視登録
+        // Modelの値の保持 
         NumberMediator = new NumberMediator();
 
-        NumberMediator.Calculated += new NumberMediator.NumberChangedEventHandler((int sender) => OutputText.text = "処理結果 " + sender.ToString());
+        // Modelの監視
+        NumberMediator.ReactNum
+                      .Skip(1)
+                      .Subscribe(number => OutputText.text = "処理結果 " + number.ToString());
 
         // 値のチェック（とボタンの有効／無効登録３点。）
-        InputForm.OnValueChangedAsObservable()
-                 .Select(x => Validate(x))
-                 .SubscribeToInteractable(PowButton);
+        var stream = InputForm.OnValueChangedAsObservable().Select(x => Validate(x)).Publish();
+        stream.SubscribeToInteractable(PowButton);
+        stream.SubscribeToInteractable(IncrementButton);
+        stream.SubscribeToInteractable(DecrementButton);
+        stream.Connect();
 
-        InputForm.OnValueChangedAsObservable()
-                 .Select(x => Validate(x))
-                 .SubscribeToInteractable(IncrementButton);
-
-        InputForm.OnValueChangedAsObservable()
-                 .Select(x => Validate(x))
-                 .SubscribeToInteractable(DecrementButton);
 
         // ユーザーアクションとロジックの紐づけ
         PowButton.OnClickAsObservable()

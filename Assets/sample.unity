@@ -102,7 +102,6 @@ GameObject:
   - component: {fileID: 65987222}
   - component: {fileID: 65987221}
   - component: {fileID: 65987220}
-  - component: {fileID: 65987219}
   m_Layer: 5
   m_Name: IncrementButton
   m_TagString: Untagged
@@ -126,20 +125,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.9998, y: 111.8}
+  m_AnchoredPosition: {x: 7.9998, y: 53}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &65987219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 65987217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aff65f402d2a544d93e388eadb46642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &65987220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,8 +167,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 65987219}
-        m_MethodName: OnClickIncrement
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -260,7 +248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 214}
+  m_AnchoredPosition: {x: 8, y: 155}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &175543094
@@ -391,7 +379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -97.002, y: 1.1}
+  m_AnchoredPosition: {x: -97.002, y: -58}
   m_SizeDelta: {x: 35.704, y: 17}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &196282439
@@ -552,7 +540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -97, y: 215}
+  m_AnchoredPosition: {x: -97, y: 156}
   m_SizeDelta: {x: 35.7, y: 17.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &229942189
@@ -700,7 +688,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 0}
+  m_AnchoredPosition: {x: 8, y: -59}
   m_SizeDelta: {x: 160, y: 19.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &817400080
@@ -753,7 +741,6 @@ GameObject:
   - component: {fileID: 827267112}
   - component: {fileID: 827267111}
   - component: {fileID: 827267110}
-  - component: {fileID: 827267109}
   m_Layer: 5
   m_Name: DecrementButton
   m_TagString: Untagged
@@ -777,20 +764,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.999998, y: 67.2}
+  m_AnchoredPosition: {x: 7.999998, y: 8}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &827267109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 827267107}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aff65f402d2a544d93e388eadb46642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &827267110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -830,8 +806,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 827267109}
-        m_MethodName: OnClickDecrement
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -887,7 +863,6 @@ GameObject:
   - component: {fileID: 878283217}
   - component: {fileID: 878283216}
   - component: {fileID: 878283215}
-  - component: {fileID: 878283218}
   m_Layer: 5
   m_Name: PowButton
   m_TagString: Untagged
@@ -911,7 +886,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 155.1}
+  m_AnchoredPosition: {x: 8, y: 96}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &878283215
@@ -953,8 +928,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 878283218}
-        m_MethodName: OnClickPow
+      - m_Target: {fileID: 0}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -999,17 +974,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 878283213}
---- !u!114 &878283218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 878283213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1aff65f402d2a544d93e388eadb46642, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1331609460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1104,7 +1068,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -64.2, y: 279.8}
+  m_AnchoredPosition: {x: -37, y: 222}
   m_SizeDelta: {x: 190.9, y: 19.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1479216060
@@ -1379,6 +1343,7 @@ GameObject:
   - component: {fileID: 1804973778}
   - component: {fileID: 1804973777}
   - component: {fileID: 1804973776}
+  - component: {fileID: 1804973780}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1468,6 +1433,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1804973780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1804973775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aff65f402d2a544d93e388eadb46642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InputForm: {fileID: 175543094}
+  OutputText: {fileID: 817400080}
+  PowButton: {fileID: 878283215}
+  IncrementButton: {fileID: 65987220}
+  DecrementButton: {fileID: 827267110}
 --- !u!1 &2089399432
 GameObject:
   m_ObjectHideFlags: 0
