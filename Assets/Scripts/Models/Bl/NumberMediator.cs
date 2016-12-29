@@ -2,7 +2,7 @@
 {
     public delegate void NumberChangedEventHandler(int sender);
     public event NumberChangedEventHandler Calculated;
-    Number Number;
+    private Number Number;
 
     public void Pow(int number)
     {
