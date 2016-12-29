@@ -1,6 +1,6 @@
 ﻿using UniRx;
 
-class NumberMediator
+public class NumberMediator : INumberMediator
 {
     public ReactiveProperty<int> ReactNum { get; private set; }
 
@@ -14,7 +14,7 @@ class NumberMediator
         var Number = new Number(number);
         Number.Pow();
 
-        var dao = new NumberFile("pow");
+        var dao = NumberDaoFactory.Create("pow");
         dao.Save(Number);
 
         ReactNum.Value = Number.Value;
@@ -25,7 +25,7 @@ class NumberMediator
         var Number = new Number(number);
         Number.Increment();
 
-        var dao = new NumberFile("increment");
+        var dao = NumberDaoFactory.Create("increment");
         dao.Save(Number);
 
         ReactNum.Value = Number.Value;
@@ -36,7 +36,7 @@ class NumberMediator
         var Number = new Number(number);
         Number.Decrement();
 
-        var dao = new NumberFile("decrement");
+        var dao = NumberDaoFactory.Create("decrement");
         dao.Save(Number);
 
         ReactNum.Value = Number.Value;

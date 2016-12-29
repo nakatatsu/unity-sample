@@ -21,12 +21,12 @@ public class Presenter : MonoBehaviour
     [SerializeField]
     private Button DecrementButton;
 
-    private NumberMediator NumberMediator;
+    private INumberMediator NumberMediator;
 
     private void Start()
     {
         // Modelの値の保持 
-        NumberMediator = new NumberMediator();
+        NumberMediator = MediatorFactory.Create<NumberMediator>();
 
         // Modelの監視
         NumberMediator.ReactNum

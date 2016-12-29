@@ -12,6 +12,6 @@ public class NumberFile : INumberDao
 
     public void Save(Number number)
     {
-        File.Write(Filename, number.Value.ToString());
+        DataFile.Write(Filename, number.Value.ToString());
     }
 }

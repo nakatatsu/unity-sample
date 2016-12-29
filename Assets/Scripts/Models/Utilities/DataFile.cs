@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-public static class File
+public static class DataFile
 {
     public static void Write(string filePath, string contents)
     {
