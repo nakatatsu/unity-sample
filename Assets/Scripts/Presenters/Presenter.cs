@@ -42,15 +42,15 @@ public class Presenter : MonoBehaviour
 
         // ユーザーアクションとロジックの紐づけ
         PowButton.OnClickAsObservable()
-                 .Select(_ => Validate(InputForm.text))
+                 .Where(_ => Validate(InputForm.text))
                  .Subscribe(_ => NumberMediator.Pow(Int32.Parse(InputForm.text)));
 
         IncrementButton.OnClickAsObservable()
-                 .Select(_ => Validate(InputForm.text))
+                 .Where(_ => Validate(InputForm.text))
                  .Subscribe(_ => NumberMediator.Increment(Int32.Parse(InputForm.text)));
 
         DecrementButton.OnClickAsObservable()
-                 .Select(_ => Validate(InputForm.text))
+                 .Where(_ => Validate(InputForm.text))
                  .Subscribe(_ => NumberMediator.Decrement(Int32.Parse(InputForm.text)));
     }
 
